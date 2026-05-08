@@ -518,56 +518,75 @@ body {
 }
 
 /* ===== OREGON TIMELINE ===== */
-.or-timeline {
+.or-htimeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 2.5rem;
+}
+
+@media (max-width: 560px) {
+  .or-htimeline { grid-template-columns: 1fr 1fr; }
+}
+
+.or-ht-item {
   display: flex;
   flex-direction: column;
-  gap: 0;
-  position: relative;
-  padding-left: 3rem;
-  margin-top: 2rem;
+  align-items: center;
+  text-align: center;
 }
 
-.or-timeline::before {
-  content: '';
-  position: absolute;
-  left: 1.1rem;
-  top: 0.6rem;
-  bottom: 0.6rem;
-  width: 3px;
-  background: var(--green);
-  border-radius: 2px;
+.or-ht-year {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--green-dark);
+  background: var(--green-light);
+  border: 1.5px solid #a7d9b0;
+  padding: 0.3rem 0.85rem;
+  border-radius: 8px;
+  margin-bottom: 1.1rem;
 }
 
-.or-event {
+.or-ht-node {
   display: flex;
-  align-items: flex-start;
-  gap: 1.5rem;
-  padding: 1rem 0;
-  position: relative;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 1.1rem;
 }
 
-.or-dot {
-  position: absolute;
-  left: -1.9rem;
-  top: 1.3rem;
-  width: 14px;
-  height: 14px;
+.or-ht-line {
+  flex: 1;
+  height: 3px;
+  background: var(--green);
+}
+
+.or-ht-item:first-child .or-ht-line:first-child { background: transparent; }
+.or-ht-item:last-child .or-ht-line:last-child { background: transparent; }
+
+.or-ht-dot {
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
   background: var(--green);
-  border: 3px solid #fff;
-  box-shadow: 0 0 0 2px var(--green);
+  border: 3px solid #f9fafb;
+  outline: 2px solid var(--green);
   flex-shrink: 0;
 }
 
-.or-year {
-  font-size: 1.1rem;
-  font-weight: 800;
-  color: var(--green-dark);
-  min-width: 3.5rem;
+.or-ht-card { padding: 0 0.75rem; }
+
+.or-ht-card strong {
+  display: block;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--gray-900);
+  margin-bottom: 0.3rem;
 }
 
-.or-content strong { font-weight: 700; color: var(--gray-900); }
-.or-content p { font-size: 0.9rem; color: var(--gray-600); margin-top: 0.2rem; }
+.or-ht-card p {
+  font-size: 0.83rem;
+  color: var(--gray-600);
+  line-height: 1.45;
+}
 
 /* ===== COMPARE CARDS ===== */
 .compare-cards {
