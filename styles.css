@@ -417,8 +417,11 @@ body {
   right: 0;
   top: 50%;
   transform: translateY(-50%);
-  border: 6px solid transparent;
-  border-left: 8px solid var(--teal);
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 10px solid var(--teal);
 }
 
 .chain-arrow.left::before {
@@ -427,8 +430,11 @@ body {
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  border: 6px solid transparent;
-  border-right: 8px solid var(--teal);
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-right: 10px solid var(--teal);
 }
 
 .chain-arrow.light-arrow::after { background: #6ee7a0; }
@@ -465,8 +471,11 @@ body {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  border: 6px solid transparent;
-  border-top: 8px solid var(--teal);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 10px solid var(--teal);
 }
 
 .chain-arrow.down.light-arrow::after { background: #6ee7a0; }
@@ -955,9 +964,12 @@ body {
     top: auto;
     bottom: 0;
     transform: translateX(-50%);
-    border: 5px solid transparent;
-    border-top: 7px solid var(--teal);
-    border-bottom-width: 0;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 8px solid var(--teal);
+    border-bottom: 0;
   }
 
   /* Light-arrow variant (Oregon dark section) */
