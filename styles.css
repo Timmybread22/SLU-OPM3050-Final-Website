@@ -903,3 +903,163 @@ body {
   .nav-toggle[aria-expanded="true"] .icon-menu { display: none; }
   .nav-toggle[aria-expanded="true"] .icon-close { display: block; }
 }
+
+/* =========================================
+   MOBILE — max-width: 720px
+   All changes scoped here so desktop is
+   completely unaffected.
+   ========================================= */
+@media (max-width: 720px) {
+
+  /* Section spacing */
+  .section { padding: 3rem 1.25rem; }
+
+  /* Hero */
+  .hero-leaf { display: none; }
+  .hero-content h1 { font-size: 2.4rem; }
+  .hero-subtitle { font-size: 1rem; }
+  .hero-authors { font-size: 0.78rem; }
+
+  /* ---- Supply chain flow diagrams ---- */
+  /* Stack nodes in a single column */
+  .chain-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  /* Convert horizontal arrows → vertical down arrows */
+  .chain-arrow.right,
+  .chain-arrow.left {
+    width: 20px;
+    height: 28px;
+    align-self: center;
+    flex: 0 0 auto;
+  }
+
+  .chain-arrow.right::after,
+  .chain-arrow.left::after {
+    width: 3px;
+    height: 100%;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+  }
+
+  .chain-arrow.right::before {
+    right: auto;
+    left: 50%;
+    top: auto;
+    bottom: 0;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-left: none;
+    border-top: 8px solid var(--teal);
+  }
+
+  .chain-arrow.left::before {
+    left: 50%;
+    top: auto;
+    bottom: 0;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-right: none;
+    border-top: 8px solid var(--teal);
+  }
+
+  .chain-arrow.light-arrow.right::before,
+  .chain-arrow.light-arrow.left::before {
+    border-top-color: #6ee7a0;
+    border-left: none;
+    border-right: none;
+  }
+
+  /* Hide the turn connector — not needed in vertical layout */
+  .chain-turn { display: none; }
+
+  /* ---- Legalization side-by-side timeline ---- */
+  /* Collapse to two stacked lists with state labels */
+  .side-timeline-header { display: none; }
+
+  .stl-row {
+    grid-template-columns: 1fr;
+    gap: 0.4rem;
+  }
+
+  .stl-mid { display: none; }
+  .stl-empty { display: none; }
+
+  .stl-event { text-align: left; }
+
+  .or-event-card::before {
+    content: 'Oregon';
+    display: block;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--green-dark);
+    opacity: 0.6;
+    margin-bottom: 0.15rem;
+  }
+
+  .mo-event-card::before {
+    content: 'Missouri';
+    display: block;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--teal);
+    opacity: 0.6;
+    margin-bottom: 0.15rem;
+  }
+
+  /* ---- Process chain ---- */
+  .process-chain {
+    justify-content: flex-start;
+    gap: 0.3rem;
+  }
+
+  .process-step { font-size: 0.78rem; padding: 0.3rem 0.6rem; }
+
+  /* ---- Product grid ---- */
+  .product-grid { gap: 0.5rem; }
+  .product-card { font-size: 0.82rem; padding: 0.5rem 0.9rem; }
+
+  /* ---- License grid ---- */
+  .license-grid { grid-template-columns: 1fr 1fr; }
+
+  /* ---- Oregon horizontal timeline ---- */
+  .or-htimeline { grid-template-columns: 1fr 1fr; gap: 1.5rem 0; }
+  .or-ht-item:nth-child(2) .or-ht-line:last-child,
+  .or-ht-item:nth-child(3) .or-ht-line:first-child { background: transparent; }
+  .or-ht-item:nth-child(1) .or-ht-line:last-child,
+  .or-ht-item:nth-child(3) .or-ht-line:last-child { background: transparent; }
+
+  /* ---- Impact circles ---- */
+  .impact-visual { width: 200px; height: 200px; }
+
+  /* ---- Comparison cards ---- */
+  .compare-cards { grid-template-columns: 1fr; }
+
+  /* ---- Takeaway cards ---- */
+  .takeaway-grid { grid-template-columns: 1fr; }
+
+  /* ---- Summary ---- */
+  .summary-grid { grid-template-columns: 1fr; }
+
+  /* ---- Diff grid ---- */
+  .diff-grid { grid-template-columns: 1fr; }
+  .diff-divider { display: none; }
+
+  /* ---- Two-col ---- */
+  .two-col { grid-template-columns: 1fr; }
+
+  /* ---- Data table ---- */
+  .data-table { font-size: 0.8rem; }
+  .data-table th, .data-table td { padding: 0.6rem 0.75rem; }
+
+  /* ---- Section headings ---- */
+  .section-title { font-size: 1.5rem; }
+}
