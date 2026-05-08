@@ -74,7 +74,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #000 url('https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=1400&q=80') center/cover no-repeat;
+  background: #000;
   text-align: center;
   overflow: hidden;
 }
@@ -82,7 +82,7 @@ body {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(0,0,0,0.85) 0%, rgba(20,50,20,0.75) 100%);
+  background: linear-gradient(135deg, #0a1a0a 0%, #0d2b0d 50%, #1a3d1a 100%);
 }
 
 .hero-content {
@@ -166,6 +166,7 @@ body {
 .section-alt { background: var(--gray-50); }
 .section-dark { background: #0f1a10; }
 .section-green { background: var(--green-dark); }
+.section-slate { background: #1e293b; }
 
 .container {
   max-width: 1100px;
