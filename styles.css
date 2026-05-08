@@ -911,84 +911,87 @@ body {
    ========================================= */
 @media (max-width: 720px) {
 
-  /* Section spacing */
-  .section { padding: 3rem 1.25rem; }
+  /* ---- Canvas: disable to prevent scroll jank ---- */
+  .hero-canvas { display: none; }
 
-  /* Hero */
+  /* ---- Hero ---- */
   .hero-leaf { display: none; }
-  .hero-content h1 { font-size: 2.4rem; }
+  .hero-content h1 { font-size: 2.2rem; }
   .hero-subtitle { font-size: 1rem; }
   .hero-authors { font-size: 0.78rem; }
 
-  /* ---- Supply chain flow diagrams ---- */
-  /* Stack nodes in a single column */
-  .chain-row {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0;
-  }
+  /* ---- Section spacing & headings ---- */
+  .section { padding: 3rem 1.25rem; }
+  .section-title { font-size: 1.5rem; }
 
-  /* Convert horizontal arrows → vertical down arrows */
+  /* ---- Supply chain diagrams: vertical stack ---- */
+  .chain-turn { display: none; }
+  .chain-row { flex-direction: column; gap: 0; }
+
+  /* Arrow becomes a thin vertical line + down arrowhead */
   .chain-arrow.right,
   .chain-arrow.left {
-    width: 20px;
+    width: 24px;
     height: 28px;
     align-self: center;
     flex: 0 0 auto;
   }
 
+  /* Vertical line (overrides the horizontal one) */
   .chain-arrow.right::after,
   .chain-arrow.left::after {
-    width: 3px;
-    height: 100%;
+    width: 2px;
+    height: calc(100% - 10px);
     left: 50%;
     top: 0;
     transform: translateX(-50%);
   }
 
-  .chain-arrow.right::before {
-    right: auto;
-    left: 50%;
-    top: auto;
-    bottom: 0;
-    transform: translateX(-50%);
-    border: 6px solid transparent;
-    border-left: none;
-    border-top: 8px solid var(--teal);
-  }
-
+  /* Down-pointing arrowhead (fully resets the horizontal triangles) */
+  .chain-arrow.right::before,
   .chain-arrow.left::before {
     left: 50%;
+    right: auto;
     top: auto;
     bottom: 0;
     transform: translateX(-50%);
-    border: 6px solid transparent;
-    border-right: none;
-    border-top: 8px solid var(--teal);
+    border: 5px solid transparent;
+    border-top: 7px solid var(--teal);
+    border-bottom-width: 0;
   }
 
+  /* Light-arrow variant (Oregon dark section) */
+  .chain-arrow.light-arrow::after { background: #6ee7a0; }
   .chain-arrow.light-arrow.right::before,
   .chain-arrow.light-arrow.left::before {
     border-top-color: #6ee7a0;
-    border-left: none;
-    border-right: none;
   }
 
-  /* Hide the turn connector — not needed in vertical layout */
-  .chain-turn { display: none; }
+  /* ---- Oregon horizontal timeline → vertical list ---- */
+  .or-htimeline { grid-template-columns: 1fr; gap: 0; }
 
-  /* ---- Legalization side-by-side timeline ---- */
-  /* Collapse to two stacked lists with state labels */
+  .or-ht-item {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+    gap: 1rem;
+    padding-bottom: 1.1rem;
+    border-bottom: 1px solid var(--gray-200);
+    margin-bottom: 0;
+  }
+
+  .or-ht-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+  .or-ht-year { flex-shrink: 0; margin-bottom: 0; font-size: 1.1rem; }
+  .or-ht-node { display: none; }
+  .or-ht-card { padding: 0; }
+
+  /* ---- Legalization timeline: hide broken lines, stack events ---- */
   .side-timeline-header { display: none; }
-
-  .stl-row {
-    grid-template-columns: 1fr;
-    gap: 0.4rem;
-  }
-
+  .stl-row::before { display: none; }  /* removes the center vertical line */
+  .stl-row { grid-template-columns: 1fr; gap: 0.35rem; }
   .stl-mid { display: none; }
   .stl-empty { display: none; }
-
   .stl-event { text-align: left; }
 
   .or-event-card::before {
@@ -999,8 +1002,8 @@ body {
     letter-spacing: 0.07em;
     text-transform: uppercase;
     color: var(--green-dark);
-    opacity: 0.6;
-    margin-bottom: 0.15rem;
+    opacity: 0.65;
+    margin-bottom: 0.1rem;
   }
 
   .mo-event-card::before {
@@ -1011,55 +1014,23 @@ body {
     letter-spacing: 0.07em;
     text-transform: uppercase;
     color: var(--teal);
-    opacity: 0.6;
-    margin-bottom: 0.15rem;
+    opacity: 0.65;
+    margin-bottom: 0.1rem;
   }
 
-  /* ---- Process chain ---- */
-  .process-chain {
-    justify-content: flex-start;
-    gap: 0.3rem;
-  }
-
+  /* ---- Other layouts ---- */
+  .process-chain { gap: 0.3rem; }
   .process-step { font-size: 0.78rem; padding: 0.3rem 0.6rem; }
-
-  /* ---- Product grid ---- */
   .product-grid { gap: 0.5rem; }
   .product-card { font-size: 0.82rem; padding: 0.5rem 0.9rem; }
-
-  /* ---- License grid ---- */
   .license-grid { grid-template-columns: 1fr 1fr; }
-
-  /* ---- Oregon horizontal timeline ---- */
-  .or-htimeline { grid-template-columns: 1fr 1fr; gap: 1.5rem 0; }
-  .or-ht-item:nth-child(2) .or-ht-line:last-child,
-  .or-ht-item:nth-child(3) .or-ht-line:first-child { background: transparent; }
-  .or-ht-item:nth-child(1) .or-ht-line:last-child,
-  .or-ht-item:nth-child(3) .or-ht-line:last-child { background: transparent; }
-
-  /* ---- Impact circles ---- */
   .impact-visual { width: 200px; height: 200px; }
-
-  /* ---- Comparison cards ---- */
   .compare-cards { grid-template-columns: 1fr; }
-
-  /* ---- Takeaway cards ---- */
   .takeaway-grid { grid-template-columns: 1fr; }
-
-  /* ---- Summary ---- */
   .summary-grid { grid-template-columns: 1fr; }
-
-  /* ---- Diff grid ---- */
   .diff-grid { grid-template-columns: 1fr; }
   .diff-divider { display: none; }
-
-  /* ---- Two-col ---- */
   .two-col { grid-template-columns: 1fr; }
-
-  /* ---- Data table ---- */
   .data-table { font-size: 0.8rem; }
   .data-table th, .data-table td { padding: 0.6rem 0.75rem; }
-
-  /* ---- Section headings ---- */
-  .section-title { font-size: 1.5rem; }
 }
