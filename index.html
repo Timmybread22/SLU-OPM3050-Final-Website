@@ -36,16 +36,24 @@
     <!-- HERO -->
     <section class="hero">
       <div class="hero-overlay"></div>
-      <svg class="hero-leaf" viewBox="0 0 300 360" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <g transform="translate(150,165)">
-          <ellipse cx="0" cy="-50" rx="18" ry="55" fill="#4ade80" opacity="0.1"/>
-          <ellipse cx="0" cy="-44" rx="16" ry="48" transform="rotate(26)" fill="#4ade80" opacity="0.1"/>
-          <ellipse cx="0" cy="-44" rx="16" ry="48" transform="rotate(-26)" fill="#4ade80" opacity="0.1"/>
-          <ellipse cx="0" cy="-36" rx="14" ry="40" transform="rotate(52)" fill="#4ade80" opacity="0.1"/>
-          <ellipse cx="0" cy="-36" rx="14" ry="40" transform="rotate(-52)" fill="#4ade80" opacity="0.1"/>
-          <ellipse cx="0" cy="-26" rx="11" ry="28" transform="rotate(76)" fill="#4ade80" opacity="0.1"/>
-          <ellipse cx="0" cy="-26" rx="11" ry="28" transform="rotate(-76)" fill="#4ade80" opacity="0.1"/>
-          <rect x="-2" y="0" width="4" height="90" fill="#4ade80" opacity="0.1" rx="2"/>
+      <svg class="hero-leaf" viewBox="0 0 200 260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <g transform="translate(100,120)" fill="#4ade80" opacity="0.18" stroke="#4ade80" stroke-width="0.5" stroke-opacity="0.1">
+          <!-- 7-finger cannabis leaf -->
+          <!-- Central finger -->
+          <path d="M0,0 C-4,-10 -13,-30 -11,-60 C-7,-78 -3,-88 0,-92 C3,-88 7,-78 11,-60 C13,-30 4,-10 0,0Z"/>
+          <!-- Serration bumps on central finger -->
+          <path d="M0,0 C-4,-10 -13,-30 -11,-60 C-9,-70 -6,-70 -4,-65 C-2,-60 0,-55 2,-60 C4,-65 6,-68 8,-60 C10,-48 4,-10 0,0Z" opacity="0.06"/>
+          <!-- ±26° pair -->
+          <path d="M0,0 C-4,-10 -12,-28 -10,-55 C-6,-72 -2,-80 0,-84 C3,-80 6,-72 10,-55 C12,-28 4,-10 0,0Z" transform="rotate(26)"/>
+          <path d="M0,0 C-4,-10 -12,-28 -10,-55 C-6,-72 -2,-80 0,-84 C3,-80 6,-72 10,-55 C12,-28 4,-10 0,0Z" transform="rotate(-26)"/>
+          <!-- ±52° pair -->
+          <path d="M0,0 C-3,-9 -10,-24 -9,-48 C-5,-63 -2,-70 0,-73 C2,-70 5,-63 9,-48 C10,-24 3,-9 0,0Z" transform="rotate(52)"/>
+          <path d="M0,0 C-3,-9 -10,-24 -9,-48 C-5,-63 -2,-70 0,-73 C2,-70 5,-63 9,-48 C10,-24 3,-9 0,0Z" transform="rotate(-52)"/>
+          <!-- ±78° pair (shortest) -->
+          <path d="M0,0 C-3,-8 -8,-19 -7,-38 C-4,-50 -1,-56 0,-58 C1,-56 4,-50 7,-38 C8,-19 3,-8 0,0Z" transform="rotate(78)"/>
+          <path d="M0,0 C-3,-8 -8,-19 -7,-38 C-4,-50 -1,-56 0,-58 C1,-56 4,-50 7,-38 C8,-19 3,-8 0,0Z" transform="rotate(-78)"/>
+          <!-- Stem -->
+          <rect x="-2.5" y="2" width="5" height="100" rx="2.5"/>
         </g>
       </svg>
       <canvas id="hero-canvas" class="hero-canvas" aria-hidden="true"></canvas>
